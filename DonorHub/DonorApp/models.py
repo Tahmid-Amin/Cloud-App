@@ -3,6 +3,23 @@ from django.db import models
 # Create your models here.
 
 class DonorInfo(models.Model):
-    Firstname = models.CharField(max_length=100)
-    Surname = models.CharField(max_length=100)
-    DOB = models.DateField()
+     GENDER_CHOICES = [
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('O', 'Other'),
+     ]
+     BLOOD_TYPE_CHOICES = [
+        ('A+', 'A+'),
+        ('A-', 'A-'),
+        ('B+', 'B+'),
+        ('B-', 'B-'),
+        ('AB+', 'AB+'),
+        ('AB-', 'AB-'),
+        ('O+', 'O+'),
+        ('O-', 'O-'),
+     ]
+     Firstname = models.CharField(max_length=100)
+     Surname = models.CharField(max_length=100)
+     DOB = models.DateField()
+     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, default='O')
+     bloodtype = models.CharField(max_length=3, choices=BLOOD_TYPE_CHOICES, default='O+')
