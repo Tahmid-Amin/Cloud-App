@@ -5,6 +5,7 @@
 </head>
 <body>
     <h1>Donor Information</h1>
+    <a href="{% url 'search' %}">Search Donors</a>
     <table>
         <thead>
             <tr>
@@ -17,7 +18,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for donor in donors %}
+            {% for donor in donor %}
                 <tr>
                     <td>{{ donor.Firstname }}</td>
                     <td>{{ donor.Surname }}</td>

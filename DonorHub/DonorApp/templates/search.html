@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Donors</title>
+</head>
+<body>
+    <h1>Search Donors</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="blood_type" placeholder="Enter Blood Type">
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>

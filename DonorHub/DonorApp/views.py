@@ -1,20 +1,20 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect
 from .models import DonorInfo
 from .forms import DonorForm
 # Create your views here.
 
 def donor_info(request):
-    donors = DonorInfo.objects.all()  # Retrieve all donors from the database
-    return render(request, 'donor_info.html', {'donors': donors})
+    donor = DonorInfo.objects.all()  # Retrieve all donors from the database
+    return render(request, 'donor_info.html', {'donor': donor})
 
 def search(request):
     if request.method == 'POST':
         blood_type = request.POST.get('blood_type')  # Example: Search by blood type
-        donors = DonorInfo.objects.filter(bloodtype__iexact=blood_type)
-        return render(request, 'search_results.html', {'donors': donors})
+        donor = DonorInfo.objects.filter(bloodtype__iexact=blood_type)
+        return render(request, 'search_results.html', {'donor': donor})
     return render(request, 'search.html')
 
-def alter(request):
+def alter(request, donor_id):
     donor = DonorInfo.objects.get(pk=donor_id)
     if request.method == 'POST':
         form = DonorForm(request.POST, instance=donor)
@@ -35,8 +35,8 @@ def add(request):
         form = DonorForm()
     return render(request, 'add.html', {'form': form})
 
-def remove(request):
-     donor = DonorInfo.objects.get(pk=donor_id)
+def remove(request, donor_id):
+    donor = DonorInfo.objects.get(pk=donor_id)
     if request.method == 'POST':
         donor.delete()
         return redirect('search') 

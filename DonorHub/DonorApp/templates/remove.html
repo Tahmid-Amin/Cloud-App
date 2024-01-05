@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Donor</title>
+</head>
+<body>
+    <h1>Remove Donor</h1>
+    <p>Are you sure you want to remove {{ donor.firstname }} {{ donor.surname }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm Removal</button>
+    </form>
+</body>
+</html>
