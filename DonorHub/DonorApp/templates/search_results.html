@@ -13,6 +13,7 @@
                 <th>Date of Birth</th>
                 <th>Gender</th>
                 <th>Blood Type</th>
+                <th>Actions</th> <!-- New column for actions -->
                 <!-- Add other fields as needed -->
             </tr>
         </thead>
@@ -24,11 +25,15 @@
                     <td>{{ donor.DOB }}</td>
                     <td>{{ donor.get_gender_display }}</td>
                     <td>{{ donor.bloodtype }}</td>
+                    <td>
+                        <a href="{% url 'alter' donor.id %}">Alter</a>
+                        <a href="{% url 'remove' donor.id %}">Remove</a>
+                    </td>
                     <!-- Display other donor fields as needed -->
                 </tr>
             {% empty %}
                 <tr>
-                    <td colspan="5">No donors found.</td>
+                    <td colspan="6">No donors found.</td>
                 </tr>
             {% endfor %}
         </tbody>
