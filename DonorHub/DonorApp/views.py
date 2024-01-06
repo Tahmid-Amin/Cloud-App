@@ -3,6 +3,9 @@ from .models import DonorInfo
 from .forms import DonorForm
 # Create your views here.
 
+def landing(request):
+    return render(request, 'landing_page.html')
+    
 def donor_info(request):
     donor = DonorInfo.objects.all()  # Retrieve all donors from the database
     return render(request, 'donor_info.html', {'donor': donor})
