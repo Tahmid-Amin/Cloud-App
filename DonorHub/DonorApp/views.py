@@ -5,7 +5,7 @@ from .forms import DonorForm
 
 def landing(request):
     return render(request, 'landing_page.html')
-    
+
 def donor_info(request):
     donor = DonorInfo.objects.all()  # Retrieve all donors from the database
     return render(request, 'donor_info.html', {'donor': donor})
@@ -13,9 +13,25 @@ def donor_info(request):
 def search(request):
     if request.method == 'POST':
         blood_type = request.POST.get('blood_type')  # Example: Search by blood type
-        donor = DonorInfo.objects.filter(bloodtype__iexact=blood_type)
+        city = request.POST.get('city')
+
+         # Filter donors based on the provided parameters
+        if blood_type and city:
+            donor = DonorInfo.objects.filter(bloodtype__icontains=blood_type, city__icontains=city)
+        elif blood_type:
+            donor = DonorInfo.objects.filter(bloodtype__icontains=blood_type)
+        elif city:
+            donor = DonorInfo.objects.filter(city__icontains=city)
+        else:
+            # If no filters are provided, return all donors
+            donor = DonorInfo.objects.all()
+
         return render(request, 'search_results.html', {'donor': donor})
+
     return render(request, 'search.html')
+        #donor = DonorInfo.objects.filter(bloodtype__iexact=blood_type)
+        #return render(request, 'search_results.html', {'donor': donor})
+   # return render(request, 'search.html')
 
 def alter(request, donor_id):
     donor = DonorInfo.objects.get(pk=donor_id)
@@ -30,7 +46,7 @@ def alter(request, donor_id):
 
 def add(request):
     if request.method == 'POST':
-        form = DonorForm(request.POST)
+        form = DonorForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('search')  # Redirect to the search page after adding
