@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-__q)eaj7ysmocn+8+9%%^a#vm&u(auiz*#8p#j$*qmnng&8yxp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['donorhub-app.nw.r.appspot.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','donorhub-app.nw.r.appspot.com']
 
 #donorhub-app.nw.r.appspot.com
 # Application definition
