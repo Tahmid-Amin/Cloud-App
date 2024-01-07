@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['donorhub-app.nw.r.appspot.com']
 
-
+#donorhub-app.nw.r.appspot.com
 # Application definition
 
 INSTALLED_APPS = [

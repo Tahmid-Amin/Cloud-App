@@ -1,18 +1,32 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Search Donors</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <h1>Search Donors</h1>
-    <form method="post">
-        {% csrf_token %}
-        <label for="blood_type">Blood Type:</label>
-        <input type="text" id="blood_type" name="blood_type" placeholder="Enter Blood Type">
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" placeholder="Enter City">
-        <button type="submit">Search</button>
-    </form>
+    <div class="searchContainer"> <!-- Use the landingContainer for consistent padding and alignment -->
+        <div class="search-logo-and-title">
+            <h1 class="searchTitle">DonorHub</h1>
+            <img src="{% static 'images/logo.png' %}" class="search_logo">
+        </div>
+
+            <form method="post" class="donorForm"> <!-- Add a class for styling -->
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="blood_type">Blood Type:</label>
+                    <input type="text" id="blood_type" name="blood_type" placeholder="Enter Blood Type" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" placeholder="Enter City" class="form-input">
+                </div>
+                <div class="form-button-container"> <!-- Container for the button -->
+                    <button type="submit" class="landButton1">Search</button> <!-- Use the same button class for consistent styling -->
+                </div>
+            </form>
+    </div>
 </body>
 </html>
-

@@ -1,14 +1,30 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Add Donor</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <h1>Add Donor</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Add Donor</button>
-    </form>
+    <div class="addNavbar">
+        <div class="add-logo-and-title">
+        <h1 class="addTitle">DonorHub</h1>
+        <img src="{% static 'images/logo.png' %}" class="add_logo">
+    </div>
+    </div>
+
+            <form method="post" class="donorForm">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="form-button-container"> <!-- Container for the button -->
+                    <button type="submit" class="landButton1">Add Donor</button>
+                </div>
+            </form>
+
+    </div>
+    <script src="{% static '/js/main.js' %}"></script>
+
 </body>
 </html>
+

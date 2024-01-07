@@ -1,12 +1,21 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Donor Information</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <h1>Donor Information</h1>
-    <a href="{% url 'search' %}">Search Donors</a>
-    <table>
+    <div class="landingContainer"> <!-- Use the same container for consistent styling -->
+        <div class="info-logo-and-title">
+            <h1 class="infoTitle">DonorHub</h1>
+            <img src="{% static 'images/logo.png' %}" class="info_logo">
+        </div>
+
+        <div class="contentContainer">
+            <a href="{% url 'search' %}"><button class="landButton1">Search Donors</button></a> <!-- Use the same button class for styling -->
+    <table class="donorTable">
         <thead>
             <tr>
                 <th>First Name</th>

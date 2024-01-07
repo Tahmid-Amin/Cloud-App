@@ -1,11 +1,20 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Search Results</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <h1>Search Results</h1>
-    <table>
+    <div class="searchContainer"> <!-- Consistent container for styling -->
+        <div class="search-logo-and-title">
+            <h1 class="searchTitle">Search Results</h1>
+            <img src="{% static 'images/logo.png' %}" class="search_logo">
+        </div>
+
+        <div class="contentContainer"> <!-- Container for table and additional content -->
+            <table class="donorTable">
         <thead>
             <tr>
                 <th>First Name</th>

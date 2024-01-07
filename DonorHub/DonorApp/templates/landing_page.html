@@ -1,49 +1,30 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Donor Management Landing Page</title>
-    <style>
-        body {
-            background-color: #f2f2f2; /* Grey background */
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .header {
-            background-color: #333; /* Dark background for the header */
-            padding: 10px;
-            text-align: right;
-        }
-        .container {
-            border-top: 3px solid #333; /* Border along the top */
-            padding: 20px;
-            text-align: center;
-        }
-        .button-container {
-            margin-top: 20px;
-        }
-        .button-container a {
-            margin: 10px;
-            text-decoration: none;
-        }
-        .button-container a button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #555; /* Dark grey button */
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
 </head>
 <body>
-    
-    <div class="container">
-        <h1>Welcome to Donor Management</h1>
-        <div class="button-container">
-            <a href="{% url 'search' %}"><button>Search</button></a>
-            <a href="{% url 'add' %}"><button>Add</button></a>
-            <a href="{% url 'all' %}"><button>See All</button></a>
+
+    <div class="landingContainer">
+        <div class="landingNavbar">
+            <div class="land-logo-and-title">
+            <h1 class="landingTitle">DonorHub</h1>
+            <img src="{% static 'images/logo.png' %}" class="land_logo">
+            </div>
+        </div>
+        <div class="landing-button-container">
+               <a href="{% url 'search' %}"><button type="button" id="landButton1" class="landButton1">Search</button></a>
+               <a href="{% url 'add' %}"><button type="button" id="landButton2" class="landButton2">Add</button></a>
+               <a href="{% url 'all' %}"><button type="button" id="landButton3" class="landButton3">See All</button></a>
         </div>
     </div>
+    <script src="{% static '/js/main.js' %}"></script>
+
 </body>
 </html>
+

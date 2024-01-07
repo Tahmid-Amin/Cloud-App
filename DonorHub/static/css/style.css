@@ -1,0 +1,586 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background-image: url('/static/images/background.jpg');
+    background-size: cover;
+}
+
+.container {
+    width: 400px;
+    max-width: 400px;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    /* background: linear-gradient(to bottom, #000000 25%, white 25%); */
+    background-color: white;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.formMsg {
+    font-family: 'Roboto bold', sans-serif;
+    text-shadow: 1px 1px 2px rgba(133, 24, 24, 0.1);
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 1000px;
+    margin-bottom: 10px; /* Added margin for spacing */
+}
+
+.g-signin2 {
+    margin-top: 10px;
+}
+
+.form-logo-and-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Added margin for spacing */
+    cursor: pointer;
+    
+}
+
+.logo {
+    height: 70px;
+    margin-left: 10px; /* Space between logo and text */
+}
+
+.formTitle {
+    margin: 0; /* Reset margin */
+    text-align: center;
+    font-family: 'Roboto bold', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(133, 24, 24, 0.1);
+}
+
+.banner {
+    width:100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba (0,0,0,0.75)), rgba (0,0,0,0.75), url(background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    width: 100%;
+    margin-right: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4142420d; 
+}
+
+.homepage_logo{
+    width: 120px;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block ;
+    margin: 0 20px;
+    font-family: 'Roboto bold', sans-serif;
+    position: relative;
+    
+
+}
+
+.navbar ul li  a {
+
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #414242;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.homeTitle {
+    margin: 0; /* Reset margin */
+    text-align: center;
+    font-family: 'Roboto bold', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(133, 24, 24, 0.1);
+}
+
+.home-logo-and-title {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.content h1{
+    font-size: 70px;
+    margin-top: 80px;
+    font-family: 'Roboto bold', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+
+}
+
+.content p{
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    font-family: 'Roboto bold', sans-serif;
+    letter-spacing: 1px;
+
+
+}
+
+.homeButton {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    font-weight: bold;
+    border: 2px solid #414242;
+    background: transparent;
+    color: #000000;
+    cursor: pointer;
+    position:relative;
+    overflow: hidden;
+    
+}
+
+ .homeLoginButton {
+    background: #414242;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left:0;
+    bottom:0;
+    z-index: -1;
+    transition: 0.5s;
+} 
+
+.homeButton:hover .homeLoginButton {
+    width: 100%;
+}
+
+.homeButton:hover {
+    border: 2px solid #414242;
+}
+
+.aboutTitle {
+    margin: 0; /* Reset margin */
+    text-align: center;
+    font-family: 'Roboto bold', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(133, 24, 24, 0.1);
+}
+
+.about-logo-and-title {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.contactTitle {
+    margin: 0; /* Reset margin */
+    text-align: center;
+    font-family: 'Roboto bold', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(133, 24, 24, 0.1);
+}
+
+.contact-logo-and-title {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-family: 'Roboto bold', sans-serif;
+    letter-spacing: 1px;
+    min-height: 20vh;
+    /* border: black solid; */
+
+}
+
+.box h2 {
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+    
+}
+
+.box p{
+    padding-left: 5px;
+    font-size: smaller;
+}   
+
+.column1 {
+    background-color: rgba(214, 212, 212, 0.813);
+    border: black solid;
+    border-right: none;
+
+}
+.column2 {
+    background-color: rgba(214, 212, 212, 0.813);
+    border: black solid;
+    border-right: none;
+
+
+}
+.column3 {
+    background-color: rgba(214, 212, 212, 0.813);
+    border: black solid;
+    border-right: none;
+
+}
+.column4 {
+    background-color: rgba(214, 212, 212, 0.813);
+    border: black solid;
+
+}
+
+.pic {
+    background-image: url(medical.jpg);
+    background-size: cover; /* Cover the entire div */
+    background-position: center; /* Center the image */
+    height: 600px; /* Set to desired height */
+    width: 100%; /* Full width of the page */
+}
+
+
+.contact-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+
+}
+
+form h3 {
+    font-family: 'Roboto bold', sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+form input, form textarea {
+    border: 0;
+    margin: 10px 0;
+    padding: 20px;
+    outline: none;
+    background: #f5f5f5;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+form button {
+    padding: 15px;
+    background: #414242;
+    color: white;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    margin: 20px auto 0;
+    border-radius: 30px;
+}
+
+.land-logo-and-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Adjust this value as needed for spacing from the top */
+    cursor: pointer;
+    text-align: center;
+    position: absolute;
+    top: 0; /* Position at the very top */
+    left: 50%; /* Center align horizontally */
+    transform: translateX(-50%); /* Offset by half of its own width to truly center */
+    width: 100%; /* Optional: If you want the element to take the full width */
+}
+
+.land_logo {
+height: 70px;
+margin-left: 10px; /* Space between logo and text */
+}
+
+.landingTitle {
+margin: 0; /* Reset margin */
+text-align: center;
+font-family: 'Roboto bold', sans-serif;
+font-size: 2em;
+font-weight: 700;
+color: #000000;
+letter-spacing: 1px;
+text-shadow: 1px 1px 2px rgba(133, 24, 24, 0.1);
+}
+.landingNavbar {
+width: 100%;
+margin-right: auto;
+padding: 35px 0;
+display: flex;
+align-items: center;
+justify-content: space-between;
+/* background-color: #4142420d;  */
+}
+
+.landingContainer {
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+
+
+
+
+.landButton1, .landButton2, .landButton3 {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    font-weight: bold;
+    border: 2px solid #414242;
+    background: transparent;
+    color: #000000;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.addContainer {
+    text-align: center;
+    padding: 20px;
+}
+
+.donorForm {
+    width: 100%; /* Adjust the form width as needed */
+    margin: auto; /* Center the form if necessary */
+    /* Other styling properties */
+    justify-content: center;
+}
+.donorForm input,
+.donorForm select,
+.donorForm textarea {
+    width: 90%; /* Adjust the width */
+    margin: 10px 0; /* Space out fields */
+    padding: 8px; /* Padding for fields */
+    /* Other styling as needed */
+}
+
+
+
+.formContainer {
+    padding: 20px; /* Adjust padding as needed */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 50%; /* Adjust the width to make the container smaller */
+    max-width: 400px; /* You can use max-width to ensure it doesn't get too wide on larger screens */
+    margin: 0 auto; /* Center the container */
+    background-color: #fff; /* Assuming you want a white background */
+    border-radius: 15px; /* Adjust the border-radius for curved edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: for shadow effect */
+}
+
+
+.form-button-container {
+    text-align: center; /* Centers the button horizontally */
+    padding: 20px; /* Add some space around the button */
+    margin-top: 20px; /* Space above the button */
+}
+.add-logo-and-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Adjust this value as needed for spacing from the top */
+    cursor: pointer;
+    text-align: center;
+    position: absolute;
+    top: 0; /* Position at the very top */
+    left: 50%; /* Center align horizontally */
+    transform: translateX(-50%); /* Offset by half of its own width to truly center */
+    width: 100%; /* Optional: If you want the element to take the full width */
+}
+
+.add_logo {
+height: 70px;
+margin-left: 10px; /* Space between logo and text */
+}
+
+.addTitle {
+    margin: 0; /* Reset margin */
+    text-align: center;
+    font-family: 'Roboto bold', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(133, 24, 24, 0.1);
+    }
+    
+    .search-logo-and-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px; /* Adjust this value as needed for spacing from the top */
+        cursor: pointer;
+        text-align: center;
+        position: absolute;
+        top: 0; /* Position at the very top */
+        left: 50%; /* Center align horizontally */
+        transform: translateX(-50%); /* Offset by half of its own width to truly center */
+        width: 100%; /* Optional: If you want the element to take the full width */
+    }
+    
+    .search_logo {
+    height: 70px;
+    margin-left: 10px; /* Space between logo and text */
+    }
+    
+    .searchTitle {
+        margin: 0; /* Reset margin */
+        text-align: center;
+        font-family: 'Roboto bold', sans-serif;
+        font-size: 2em;
+        font-weight: 700;
+        color: #000000;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 2px rgba(133, 24, 24, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px; /* Adjust spacing between form elements */
+            display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+        
+        .form-input {
+            width: 100%; /* Ensure input fields do not overflow */
+            /* Other input styling */
+            display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .contentContainer {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .donorTable {
+            width: 100%;
+            border-collapse: collapse; /* For a clean table look */
+            margin-top: 20px;
+        }
+        
+        .donorTable th, .donorTable td {
+            border: 1px solid #ddd; /* Light border for cells */
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .donorTable th {
+            background-color: #f4f4f4; /* Header background */
+            font-weight: bold;
+        }
+        
+        .info-logo-and-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0px; /* Adjust this value as needed for spacing from the top */
+            cursor: pointer;
+            text-align: center;
+            position: absolute;
+            top: -30%; /* Position at the very top */
+            left: 50%; /* Center align horizontally */
+            transform: translateX(-50%); /* Offset by half of its own width to truly center */
+            width: 100%; /* Optional: If you want the element to take the full width */
+        }
+        
+        .info_logo {
+        height: 70px;
+        margin-left: 10px; /* Space between logo and text */
+        }
+        
+        .infoTitle {
+            margin: 0; /* Reset margin */
+            text-align: center;
+            font-family: 'Roboto bold', sans-serif;
+            font-size: 2em;
+            font-weight: 700;
+            color: #000000;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(133, 24, 24, 0.1);
+            }
