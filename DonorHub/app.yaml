@@ -1,0 +1,4 @@
+runtime: python39
+entrypoint: gunicorn -b :$PORT DonorHub.wsgi
+env_variables:
+    APPENGINE_URL: https://DonorHub-App.uc.r.appspot.com

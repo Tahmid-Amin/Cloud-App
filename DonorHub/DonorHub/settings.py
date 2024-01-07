@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-__q)eaj7ysmocn+8+9%%^a#vm&u(auiz*#8p#j$*qmnng&8yxp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['donorhub-app.nw.r.appspot.com']
 
 
 # Application definition
@@ -78,11 +78,14 @@ WSGI_APPLICATION = 'DonorHub.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'donorInfo',
+        'USER': 'admin',
+        'PASSWORD': 'pass1234',
+        'HOST': '/cloudsql/donorhub-app:europe-west2:donor-hub',
+        'PORT': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -128,3 +131,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#DATABASES = {
+    #'default': {
+       # 'ENGINE': 'django.db.backends.sqlite3',
+       # 'NAME': BASE_DIR / 'db.sqlite3',
+    #}
+#}
