@@ -3,8 +3,8 @@ from .models import DonorInfo
 from .forms import DonorForm
 # Create your views here.
 
-def landing(request):
-    return render(request, 'landing_page.html')
+def home(request):
+    return render(request, 'homepage.html')
 
 def donor_info(request):
     donor = DonorInfo.objects.all()  # Retrieve all donors from the database
@@ -61,6 +61,10 @@ def remove(request, donor_id):
         return redirect('search') 
     return render(request, 'remove.html', {'donor': donor})
 
+def login_view(request):
+    return render(request, 'login.html')
 
+def landing_page_view(request):
+    return render(request, 'landing_page.html')
 #def home(request):
     #return HttpResponse('Hello world!')

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-__q)eaj7ysmocn+8+9%%^a#vm&u(auiz*#8p#j$*qmnng&8yxp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['donorhub-app.nw.r.appspot.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','donorhub-app.nw.r.appspot.com']
 
 #donorhub-app.nw.r.appspot.com
 # Application definition
@@ -38,7 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'DonorApp'
+    'DonorApp',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google'
     
 ]
 
@@ -50,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware'
 ]
 
 ROOT_URLCONF = 'DonorHub.urls'
@@ -138,3 +144,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
        # 'NAME': BASE_DIR / 'db.sqlite3',
     #}
 #}
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/landing/'  # Set to the path of your landing page

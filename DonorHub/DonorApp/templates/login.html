@@ -1,26 +1,28 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8" />
-    <meta name="google-signin-client_id" content="537326250569-g339k6jiv3mrenrerd6fd85nhdnpkflg.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="130035310013-jr3v3s1q156l4narkeo3n9iqsqjr8fjs.apps.googleusercontent.com">
     <title>Login Form</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Link to your CSS file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <img src="avatar.png" class="avatar">
+        <img src="{% static 'images/avatar.png' %}" class="avatar">
         <p class="formMsg">Sign in through your Google account:</p>
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div class="g-signin2"></div>
         <div class="form-logo-and-title" id="redirectHome">
             <h1 class="formTitle">DonorHub</h1>
-            <img src="logo.png" class="logo" alt="logo">
+            <img src="{% static 'images/logo.png' %}" alt="logo">
         </div>
     </div>
-    
+
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src=".\main.js"></script>
+    <script src="{% static '/js/main.js' %}"></script>
 </body>
 </html>
